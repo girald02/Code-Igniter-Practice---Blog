@@ -1,3 +1,10 @@
+<!-- .htaccess -->
+RewriteEngine on
+RewriteCond $1 !^(index\.php|assets|images|js|css|libs|uploads|icons|favicons.png|fonts)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ ./index.php/$1 [L]
+
 <!-- autoload.php -->
 $autoload['libraries'] = array('form_validation' , 'session' , 'pagination');
 $autoload['helper'] = array('url','form','text');
